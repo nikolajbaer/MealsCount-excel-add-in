@@ -13,3 +13,11 @@ Next we'll need to better understand the user's Excel sheet and the MealsCount d
 I'm new to all of this and did all my testing natively in Visual Studio so another thing we'll need to figure out is how to deploy this add-in in the user's environment.
 
 There appear to be several options: https://docs.microsoft.com/en-us/office/dev/add-ins/publish/publish#outlook-add-in-deployment
+
+# Contributing
+
+Developers interested in contributing to this project should follow the process outlined in CONTRIBUTING.md.
+
+# Using this add-in
+
+We're still figuring out the best way to deploy this add-in so that users can make use of it easily.

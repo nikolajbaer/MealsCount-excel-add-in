@@ -16,15 +16,32 @@
         return data;
     }
 
+    async function checkRange(rangeStr, url) {
+        let sheet = context.workbook.worksheets.getActiveWorksheet();
+        let range = sheet.getRange(rangeStr);
+        let contents = range.values;
+        if (contents === "") {
+            let data = await pollEndpoint(url);
+            return data;
+        } else {
+            throw 'Suggested range is already populated'
+        }
+    }
+
     function refreshData() {
         Excel.run(function (context) {            
             data = pollEndpoint('https://jsonplaceholder.typicode.com/todos/1')
-                .then(function (data) {
-                    let sheet = context.workbook.worksheets.getActiveWorksheet();
-                    let range = sheet.getRange("A1");
-                    range.values = JSON.stringify(data);
-                    context.sync();
-                });            
+                .then(
+                    function (data) {
+                        let sheet = context.workbook.worksheets.getActiveWorksheet();
+                        let range = sheet.getRange("A1");
+                        range.values = JSON.stringify(data);
+                        context.sync();
+                    },
+                    function (err) {
+                        console.log(err);
+                    }
+                );            
         }).catch(function (error) {
             console.log("Error: " + error);
             if (error instanceof OfficeExtension.Error) {
