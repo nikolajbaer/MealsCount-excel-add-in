@@ -14,13 +14,14 @@
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
   <Version>1.0.0.0</Version>
-  <ProviderName>Code for San Diego</ProviderName>
+  <ProviderName>Open San Diego</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="MealsCount" />
-  <Description DefaultValue="MealsCount"/>
-  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-  <IconUrl DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
+  <DisplayName DefaultValue="Meals Count" />
+  <Description DefaultValue="Obtains a new optimal grouping from the Meals Count website based on data in the spreadsheet."/>
+  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. <IconUrl DefaultValue="~remoteAppUrl/Images/Button32x32.png" />-->
+  <IconUrl DefaultValue="~remoteAppUrl/Images/mealsCountImgs/favicon.png" />
+  
 
   <SupportUrl DefaultValue="http://www.contoso.com" />
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
@@ -116,9 +117,9 @@
     <!-- You can use resources across hosts and form factors. -->
     <Resources>
       <bt:Images>
-        <bt:Image id="Contoso.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Button16x16.png" />
-        <bt:Image id="Contoso.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
-        <bt:Image id="Contoso.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Button80x80.png" />
+        <bt:Image id="Contoso.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/mealsCountImgs/favicon.png" />
+        <bt:Image id="Contoso.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/mealsCountImgs/favicon.png" />
+        <bt:Image id="Contoso.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/mealsCountImgs/favicon.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Contoso.DesktopFunctionFile.Url" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html" />
@@ -127,13 +128,13 @@
       </bt:Urls>
       <!-- ShortStrings max characters==125. -->
       <bt:ShortStrings>
-        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Meals Count" />
         <bt:String id="Contoso.Group1Label" DefaultValue="Commands Group" />
         <bt:String id="Contoso.GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
       </bt:ShortStrings>
       <!-- LongStrings max characters==250. -->
       <bt:LongStrings>
-        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Open Meals Count Group Calculator" />
         <bt:String id="Contoso.GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started." />
       </bt:LongStrings>
     </Resources>
