@@ -1,6 +1,6 @@
 ﻿#content-header {
-    background: #2a8dd4;
-    color: #fff;
+    background: #2ad44f;
+    color: #000;
     position: absolute;
     top: 0;
     left: 0;
@@ -21,4 +21,11 @@
 
 .padding {
     padding: 15px;
+}
+
+.favicon {
+    height: 100px;
+    width: 100px;
+    align-self: end;
+    z-index: 1;
 }
