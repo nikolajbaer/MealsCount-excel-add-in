@@ -37,9 +37,22 @@
     </div>
     <div id="content-main">
         <div class="padding">
-            <p>Click the button below to refresh Meals Count data from the web.</p>
+            <p>Enter your district's info and click the button below to refresh Meals Count data from the web.</p>
             <br />
-            <button class="ms-Button" id="refresh">Refresh Data</button>
+            <form>
+                <div>
+                    <span>State:</span>
+                    <input id="state" type="text" placeholder="XX" />
+                </div>
+                <br />
+                <div>
+                    <span>District:</span>
+                    <input id="district" type="number" placeholder=123456 />
+                </div>
+                <br />
+                <button class="ms-Button" id="refresh">Refresh Data</button>
+            </form>
+            <p id="working" style="display:none"> Fetching Data From mealscount.com This might take a while ... </p>
         </div>
     </div>
 </body>

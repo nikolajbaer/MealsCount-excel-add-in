@@ -29,3 +29,8 @@
     align-self: end;
     z-index: 1;
 }
+
+form {
+    display:inline-grid;
+    width:100%;
+}
