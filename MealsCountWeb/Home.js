@@ -39,10 +39,9 @@
                 school['daily_breakfast_served'] = parseInt(school['total_enrolled'] * 0.15);
                 school['daily_lunch_served'] = parseInt(school['total_enrolled'] * 0.55);
             }
-
+            console.log(schoolInfo.schools[0]['daily_breakfast_served']);
             return schoolInfo;
         }
-
 
         // Format the solution so that it can be pasted into the Meals Count Excel Worksheet
         function formatOptimalSolution(solution) {
@@ -56,6 +55,9 @@
                 // Get the URL where the optimal solution will be posted
                 let requestObj = {
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: schoolInfo,
                 };
                 let solutionUrl = fetch('https://www.mealscount.com/api/districts/optimize-async/', requestObj)
@@ -68,6 +70,7 @@
 
                     // Function which polls Lambda 
                     function getResults() {
+                        console.log('Polling: ' + url);
                         fetch(url)
                             .then(resp => {
                                 // If results are ready then resolve the promise
@@ -77,11 +80,11 @@
                                         .then(data => resolve(formatOptimalSolution(data)))
                                         .catch(err => { console.error(err); reject(err); })
                                 }
-                            }).catch(err => { console.error(err); reject(err); })
+                            }).catch(err => { clearInterval(poller); console.error(err); reject(err); })
                     }
 
                     let poller = setInterval(getResults, 1000);
-                });
+                }).catch(err => { clearInterval(poller); console.error(err); });
             });
 
             return results;
