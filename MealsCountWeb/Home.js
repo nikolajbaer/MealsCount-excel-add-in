@@ -40,16 +40,19 @@ function refreshData() {
     // Format the solution so that it can be pasted into the Meals Count Excel Worksheet
     // This is super brittle but will need to change anyway
     function formatOptimalSolution(solution) {
-        let results = [];
-        let bestStrategy = solution.best_strategy
-        for (let strategy of solution.strategies) {
-            if (strategy.name === bestStrategy) {
-                for (let group of strategy.groups) {
-                    results.concat([group.name].concat(group.school_reimbursements))
-                }
-            }
-        }
-        return results;
+            /*
+           let results = [];
+           let bestStrategy = solution.best_strategy
+           for (let strategy of solution.strategies) {
+               if (strategy.name === bestStrategy) {
+                   for (let group of strategy.groups) {
+                       results.concat([group.name].concat(group.school_reimbursements))
+                   }
+               }
+           }
+           return results;
+           */
+        return JSON.stringify(solution);
     }
 
     // Post and poll for the optimal solution for the given district using the enriched school info object
