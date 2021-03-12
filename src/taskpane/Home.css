@@ -1,0 +1,36 @@
+﻿#content-header {
+    background: #2ad44f;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+
+#content-main {
+    background: #fff;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.favicon {
+    height: 100px;
+    width: 100px;
+    align-self: end;
+    z-index: 1;
+}
+
+form {
+    display:inline-grid;
+    width:100%;
+}
