@@ -17,14 +17,15 @@
  }
  
  .ms-welcome__header {
-    padding: 20px;
-    padding-bottom: 30px;
-    padding-top: 100px;
+    padding: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     align-items: center;
+    background-color: white;
  }
 
  .ms-welcome__main {
