@@ -7,7 +7,7 @@
 import "../../assets/icon-16.png";
 import "../../assets/icon-32.png";
 import "../../assets/icon-80.png";
-import { refreshData, createWorksheet } from "./Home.js";
+import { runOptimize, fillSchoolData, createWorksheet } from "./MealsCount.js";
 
 /* global console, document, Excel, Office */
 
@@ -15,29 +15,9 @@ Office.onReady(info => {
   if (info.host === Office.HostType.Excel) {
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
-    document.getElementById("refresh").onclick = refreshData;
+    document.getElementById("refresh").onclick = fillSchoolData;
+    document.getElementById("optimize").onclick = runOptimize;
     createWorksheet()
   }
 });
 
-export async function run() {
-  try {
-    await Excel.run(async context => {
-      /**
-       * Insert your Excel code here
-       */
-      const range = context.workbook.getSelectedRange();
-
-      // Read the range address
-      range.load("address");
-
-      // Update the fill color
-      range.format.fill.color = "yellow";
-
-      await context.sync();
-      console.log(`The range address was ${range.address}.`);
-    });
-  } catch (error) {
-    console.error(error);
-  }
-}
